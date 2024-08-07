@@ -2,7 +2,11 @@ import logo from './4me.png';
 import { useNavigate } from 'react-router-dom';
 import react, {useState} from 'react';
 
+
 const HomePage = ({location}) => {
+
+ 
+
   const [Height, setHeight] = useState('100hv');
   const navigate = useNavigate();
   return (location.pathname === '/HomePage' || location.pathname === '/')

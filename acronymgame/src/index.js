@@ -4,13 +4,18 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AuthProvider } from './contexts/AuthProvider';
+import {disableReactDevTools} from '@fvilers/disable-react-devtools';
+
+if(process.env.NODE_ENV === 'production') disableReactDevTools()
+
 
 ReactDOM.render(
-  <React.StrictMode>
     <BrowserRouter>
+      <AuthProvider>
           <App />
-    </BrowserRouter>
-  </React.StrictMode>,
+        </AuthProvider>
+    </BrowserRouter>,
   document.getElementById('root'),
 );
 
